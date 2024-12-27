@@ -1,0 +1,4 @@
+---@field CoffeeFillingElapsedTime double
+---@field CoffeeFillerFillingTime double
+---@field MilkFlothingTime double
+---@field MilkFlothingElapsedTime double

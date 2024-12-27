@@ -1,0 +1,1 @@
+---@field DayDuration double

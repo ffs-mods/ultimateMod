@@ -1,0 +1,2 @@
+---@field DrinkFillerFillingTime TArray<double>
+---@field DrinkFillerFillingElapsedTime TArray<double>
