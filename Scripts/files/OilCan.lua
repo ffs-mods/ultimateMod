@@ -1,3 +1,7 @@
+require 'config'
+
+-- Class variables
+
 --
 local function GetItemPutSound(context)
     local oilCan = context:get()

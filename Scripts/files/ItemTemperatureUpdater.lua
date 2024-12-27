@@ -1,3 +1,7 @@
+require 'config'
+
+-- Class variables
+
 -- 
 local function UpdateTemperatures(context)
     local ItemTemperatureUpdater = context:get()

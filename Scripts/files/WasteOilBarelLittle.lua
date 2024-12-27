@@ -1,3 +1,7 @@
+require 'config'
+
+-- Class variables
+
 -- 
  local function GetItemHoldingTransform(context)
     local wasteOil = context:get()

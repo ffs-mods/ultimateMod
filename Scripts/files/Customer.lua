@@ -1,3 +1,7 @@
+require 'config'
+
+-- Class variables
+
 -- 
 local function UpdatePatience(context)
     local customer = context:get()
@@ -13,3 +17,11 @@ local function UpdateEatingState(context)
     print("UpdateEatingState")
 end
 RegisterHook('/Game/Blueprints/Characters/Customer/BP_Customer.BP_Customer_C:UpdateEatingState', UpdateEatingState)
+
+
+NotifyOnNewObject('/Game/Blueprints/Characters/Customer/BP_Customer.BP_Customer_C', function(customer)
+    local CharacterMovement = customer:GetPropertyValue("CharacterMovement")
+    if CharacterMovement then
+        CharacterMovement:SetPropertyValue("MaxWalkSpeed", 200.0)
+    end
+end)

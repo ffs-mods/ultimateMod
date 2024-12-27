@@ -1,3 +1,7 @@
+require 'config'
+
+-- Class variables
+
 --
 local function OnRep_Doneness(context)
     local fryerBasket = context:get()

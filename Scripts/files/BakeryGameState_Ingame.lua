@@ -1,3 +1,6 @@
+require 'config'
+
+-- Class variables
 ---@field bIsRestaurantRunning boolean
 ---@field RestaurantMoney double
 ---@field RestaurantPopularity double

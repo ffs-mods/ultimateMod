@@ -1,3 +1,7 @@
+require 'config'
+
+-- Class variables
+
 --
 local function OnRep_MeatTopDoneness(context)
     local patty = context:get()

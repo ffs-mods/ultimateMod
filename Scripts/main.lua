@@ -5,16 +5,16 @@ local function StartMod(context)
 
     print('ModdedFF: Loading modded files')
 
-    -- Gamemode
+    -- -- Gamemode
     require 'files/BakeryGameState_Ingame'
 
-    -- Extra Ingredients
+    -- -- Extra Ingredients
     require 'files/SauceBottle'
 
-    -- Grill
+    -- -- Grill
     require 'files/BeefPatty'
 
-    -- Oils
+    -- -- Oils
     require 'files/OilCan'
     require 'files/WasteOilBarelLittle'
 
@@ -26,12 +26,15 @@ local function StartMod(context)
     require 'files/ItemStack'
     require 'files/ItemTemperatureUpdater'
 
-    -- Customers (And DriveThru)
+    -- -- Customers (And DriveThru)
     require 'files/Customer'
     require 'files/DriveThruCar'
-    require 'files/BTT_CustomerEating_C'
+    require 'files/CustomerEating'
 
-    -- IA
+    -- -- Truck
+    require 'files/GoodsTruck'
+
+    -- -- IA
     require 'files/Player_AI_Server'
     require 'files/Player_AI_Busser'
 

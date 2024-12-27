@@ -1,5 +1,7 @@
 require 'config'
 
+-- Class variables
+
 --
 local function getMaxItem(ItemStackTargetName, ItemStackClassName)
 
@@ -11,7 +13,7 @@ local function getMaxItem(ItemStackTargetName, ItemStackClassName)
 
     print(string.format("%s, %s", itemTargerName, stackClassName))
 
-    local maxItem = classNameToMaxItem[itemTargerName]
+    local maxItem = itemsConfig[itemTargerName]
     if type(maxItem) == "table" then
         return maxItem[stackClassName] or nil
     else

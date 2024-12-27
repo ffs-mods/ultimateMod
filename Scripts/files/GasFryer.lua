@@ -1,3 +1,7 @@
+require 'config'
+
+-- Class variables
+
 -- 
  local function OnRep_CleanOil1(context)
     local fryer = context:get()
