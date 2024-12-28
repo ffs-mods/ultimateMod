@@ -89,7 +89,7 @@ itemsConfig = {
 
 --
 driveThruCarConfig = {
-    carSpeed = 5000, -- default: 5000
+    MaxCarSpeed = 5000, -- default: 5000
 }
 
 -- Truck

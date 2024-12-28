@@ -22,6 +22,11 @@ RegisterHook('/Game/Blueprints/Characters/Customer/BP_Customer.BP_Customer_C:Upd
 NotifyOnNewObject('/Game/Blueprints/Characters/Customer/BP_Customer.BP_Customer_C', function(customer)
     local CharacterMovement = customer:GetPropertyValue("CharacterMovement")
     if CharacterMovement then
-        CharacterMovement:SetPropertyValue("MaxWalkSpeed", 200.0)
+        CharacterMovement:SetPropertyValue("MaxWalkSpeed", 2000.0)
     end
+end)
+
+RegisterHook('/Game/Blueprints/Characters/Customer/Tasks/BTT_CustomerEating.BTT_CustomerEating_C:RandomEatingMode', function(context)
+    local customerEating = context:get()
+    customerEating:SetPropertyValue('EatingDuration', 10)
 end)

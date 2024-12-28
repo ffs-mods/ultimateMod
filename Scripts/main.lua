@@ -54,3 +54,37 @@ end
 
 
 RegisterKeyBind(Key.F1, StartMod)
+
+NotifyOnNewObject('/Game/Blueprints/BP_BakeryGameInstance.BP_BakeryGameInstance_C', function(gameInstance)
+    print('BakeryGameInstance found')
+end)
+
+
+NotifyOnNewObject('/Game/Blueprints/GameMode/BP_BakeryGameMode_Ingame.BP_BakeryGameMode_Ingame_C', function(gameMode)
+    print('BakeryGameMode_Ingame found')
+end)
+
+NotifyOnNewObject('/Game/Blueprints/GameMode/BP_BakeryGameMode_Ingame.BP_BakeryGameMode_C', function(gameMode)
+    print('BP_BakeryGameMode_C found')
+end)
+
+NotifyOnNewObject('/Game/Blueprints/GameMode/GameState/BP_BakeryGameState_Ingame.BP_BakeryGameState_Ingame_C', function(gameState)
+    print('BakeryGameState_Ingame found')
+end)
+
+NotifyOnNewObject('/Game/Blueprints/GameMode/GameState/BP_BakeryGameState.BP_BakeryGameState_C', function(gameState)
+    print('BakeryGameState found')
+end)
+
+
+NotifyOnNewObject('/Game/Blueprints/BP_BakeryGameInstance.BP_BakeryGame_C', function(gameInstance)
+    print('BP_BakeryGame_C found')
+end)
+
+NotifyOnNewObject("/Game/Blueprints/BPL_Bakery.BPL_Bakery_C", function(CreatedObject)
+    print('BPL_Bakery found')
+end)
+
+NotifyOnNewObject("/Script/Engine.PlayerController", function(CreatedObject)
+    print('PlayerController found')
+end)

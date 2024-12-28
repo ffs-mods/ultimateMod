@@ -23,3 +23,4 @@ local function ResetEndOfDayData(context)
     -- gameState:SetPropertyValue("MaxGameTime", 10.0) -- default: 43200
 end
 RegisterHook('/Game/Blueprints/GameMode/GameState/BP_BakeryGameState_Ingame.BP_BakeryGameState_Ingame_C:ResetEndOfDayData', ResetEndOfDayData)
+

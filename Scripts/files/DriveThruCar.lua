@@ -16,5 +16,5 @@ RegisterHook('/Game/Blueprints/Gameplay/DriveThru/BP_DriveThruCar.BP_DriveThruCa
 
 NotifyOnNewObject('/Game/Blueprints/Gameplay/DriveThru/BP_DriveThruCar.BP_DriveThruCar_C', function(DriveThruCar)
     print('DriveThruCar object created')
-    DrinkMachine:SetPropertyValue("MaxCarSpeed", 200.0)
+    DriveThruCar:SetPropertyValue("MaxCarSpeed", driveThruCarConfig.MaxCarSpeed)
 end)
