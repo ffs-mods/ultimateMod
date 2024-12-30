@@ -45,46 +45,33 @@ local function StartMod(context)
 
 end
 
--- RegisterHook('/Game/Blueprints/GameMode/GameState/BP_BakeryGameState_Ingame.BP_BakeryGameState_Ingame_C:LoadSaveData', function(context)
---     local gameState = context:get()
---     gameState:SetTotalDays(1)
---     gameState:SetRestaurantLevel(32)
---     gameState:SetRestaurantMoney(1000)
--- end)
+-- Flag to avoid loading the mod multiple times
+local isLoaded = false
 
-
-RegisterKeyBind(Key.F1, StartMod)
-
-NotifyOnNewObject('/Game/Blueprints/BP_BakeryGameInstance.BP_BakeryGameInstance_C', function(gameInstance)
-    print('BakeryGameInstance found')
-end)
-
-
-NotifyOnNewObject('/Game/Blueprints/GameMode/BP_BakeryGameMode_Ingame.BP_BakeryGameMode_Ingame_C', function(gameMode)
-    print('BakeryGameMode_Ingame found')
-end)
-
-NotifyOnNewObject('/Game/Blueprints/GameMode/BP_BakeryGameMode_Ingame.BP_BakeryGameMode_C', function(gameMode)
-    print('BP_BakeryGameMode_C found')
-end)
-
-NotifyOnNewObject('/Game/Blueprints/GameMode/GameState/BP_BakeryGameState_Ingame.BP_BakeryGameState_Ingame_C', function(gameState)
-    print('BakeryGameState_Ingame found')
-end)
-
+-- Add listener for new game state object
 NotifyOnNewObject('/Game/Blueprints/GameMode/GameState/BP_BakeryGameState.BP_BakeryGameState_C', function(gameState)
-    print('BakeryGameState found')
-end)
 
+    -- Check if the mod is already loaded
+    if isLoaded == true then
+        return
+    end
 
-NotifyOnNewObject('/Game/Blueprints/BP_BakeryGameInstance.BP_BakeryGame_C', function(gameInstance)
-    print('BP_BakeryGame_C found')
-end)
+    -- Find the game state object
+    local BakeryGameStateIngame = FindFirstOf('BP_BakeryGameState_Ingame_C')
+    if BakeryGameStateIngame == nil then
+        return
+    end
 
-NotifyOnNewObject("/Game/Blueprints/BPL_Bakery.BPL_Bakery_C", function(CreatedObject)
-    print('BPL_Bakery found')
-end)
+    -- Check if the game is running (check value of bIsRestaurantRunning)
+    local bIsRestaurantRunning = BakeryGameStateIngame:GetPropertyValue('bIsRestaurantRunning')
+    if bIsRestaurantRunning ~= false then
+        return
+    end
 
-NotifyOnNewObject("/Script/Engine.PlayerController", function(CreatedObject)
-    print('PlayerController found')
+    -- Load the mod
+    StartMod()
+
+    -- Update the flag
+    isLoaded = true
+
 end)
