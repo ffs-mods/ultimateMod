@@ -4,6 +4,9 @@ require 'config'
 ---@field MaxTruckSpeed double
 ---@field TruckSpeed double
 
-NotifyOnNewObject('/Game/Blueprints/Gameplay/Car/BP_GoodsTruck.BP_GoodsTruck_C', function(truck)
-    truck:SetPropertyValue("MaxTruckSpeed", goodsTruckConfig.MaxTruckSpeed)
-end)
+if goodsTruckConfig.MaxTruckSpeed ~= false then
+    local function OnSpawn(truck)
+        truck:SetPropertyValue("MaxTruckSpeed", goodsTruckConfig.MaxTruckSpeed)
+    end
+    NotifyOnNewObject('/Game/Blueprints/Gameplay/Car/BP_GoodsTruck.BP_GoodsTruck_C', OnSpawn)
+end

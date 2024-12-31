@@ -6,15 +6,19 @@ require 'config'
 ---@field Patience double
 ---@field PatienceSpeed double
 
--- 
-local function UpdatePatience(context)
-    local customer = context:get()
-    customer:SetPropertyValue("Patience", 1.0)
-    customer:SetPropertyValue("PatienceSpeed", 0.0)
+-- HasRunOutOfPatience
+---@return boolean
+if driveThruCarConfig.DisableRunOutOfPatience == true then
+    local function HasRunOutOfPatience(context)
+        return false
+    end
+    RegisterHook('/Game/Blueprints/Gameplay/DriveThru/BP_DriveThruCar.BP_DriveThruCar_C:HasRunOutOfPatience', HasRunOutOfPatience)
 end
-RegisterHook('/Game/Blueprints/Gameplay/DriveThru/BP_DriveThruCar.BP_DriveThruCar_C:UpdatePatience', UpdatePatience)
 
-NotifyOnNewObject('/Game/Blueprints/Gameplay/DriveThru/BP_DriveThruCar.BP_DriveThruCar_C', function(DriveThruCar)
-    print('DriveThruCar object created')
-    DriveThruCar:SetPropertyValue("MaxCarSpeed", driveThruCarConfig.MaxCarSpeed)
-end)
+
+if driveThruCarConfig.MaxCarSpeed ~= false then
+    local function GetMaxCarSpeed()
+        return driveThruCarConfig.MaxCarSpeed
+    end
+    RegisterHook('/Game/Blueprints/Gameplay/DriveThru/BP_DriveThruCar.BP_DriveThruCar_C:GetMaxCarSpeed', OnSpawn)
+end
