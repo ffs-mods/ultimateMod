@@ -20,5 +20,5 @@ if driveThruCarConfig.MaxCarSpeed ~= false then
     local function GetMaxCarSpeed()
         return driveThruCarConfig.MaxCarSpeed
     end
-    RegisterHook('/Game/Blueprints/Gameplay/DriveThru/BP_DriveThruCar.BP_DriveThruCar_C:GetMaxCarSpeed', OnSpawn)
+    RegisterHook('/Game/Blueprints/Gameplay/DriveThru/BP_DriveThruCar.BP_DriveThruCar_C:GetMaxCarSpeed', GetMaxCarSpeed)
 end

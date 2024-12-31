@@ -11,7 +11,7 @@ local function getMaxItem(ItemStackTargetName, ItemStackClassName)
     end
     local stackClassName = ItemStackClassName:match("([^.]+)$"):match("([^.]+)$")
 
-    print(string.format("%s, %s", itemTargerName, stackClassName))
+    -- print(string.format("%s, %s", itemTargerName, stackClassName))
 
     local maxItem = itemsConfig[itemTargerName]
     if type(maxItem) == "table" then

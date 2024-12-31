@@ -89,12 +89,12 @@ itemsConfig = {
 
 -- IA helper
 iaHelperConfig = {
-    MaxWalkSpeed = false, -- default: 200.0
+    MaxWalkSpeed = 1000.0, -- default: 200.0
 }
 
 -- Customer
 CustomerConfig = {
-    MaxWalkSpeed = false, -- default: 200.0
+    MaxWalkSpeed = 1000.0, -- default: 200.0
     EatingDuration = false, -- default: Random
     DisableRunOutOfPatience = false, -- default: false
     PatienceSpeed = false, -- default: Value set by difficulty (0.0)
@@ -102,11 +102,11 @@ CustomerConfig = {
 
 -- DriveThru
 driveThruCarConfig = {
-    MaxCarSpeed = false, -- default: 200.0
+    MaxCarSpeed = 1000.0, -- default: 200.0
     DisableRunOutOfPatience = false, -- default: false
 }
 
 -- Truck
 goodsTruckConfig = {
-    MaxTruckSpeed = false, -- default: 200.0
+    MaxTruckSpeed = 1000.0, -- default: 200.0
 }
