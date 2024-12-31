@@ -6,6 +6,7 @@ require 'config'
 
 if goodsTruckConfig.MaxTruckSpeed ~= false then
     local function OnSpawn(truck)
+        print("Truck spawned")
         truck:SetPropertyValue("MaxTruckSpeed", goodsTruckConfig.MaxTruckSpeed)
     end
     NotifyOnNewObject('/Game/Blueprints/Gameplay/Car/BP_GoodsTruck.BP_GoodsTruck_C', OnSpawn)
