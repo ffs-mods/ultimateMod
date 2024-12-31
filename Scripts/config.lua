@@ -1,4 +1,4 @@
-itemsConfig = {
+itemsStackConfig = {
 
     BP_CrateStack_C = {
         BP_Onion_C = 40, -- default: 40
@@ -87,13 +87,21 @@ itemsConfig = {
     -- }
 }
 
+itemsConfig = {
+    infiniteStack = false, -- default: false
+    infiniteSauce = false, -- default: false
+    freezeTemperature = false, -- default: false
+    infiniteWasteOil = false, -- default: false
+    infiniteOilCan = false, -- default: false
+}
+
 -- IA helper
 iaHelperConfig = {
     MaxWalkSpeed = false, -- default: 200.0
 }
 
 -- Customer
-CustomerConfig = {
+customerConfig = {
     MaxWalkSpeed = false, -- default: 200.0
     EatingDuration = false, -- default: Random
     DisableRunOutOfPatience = false, -- default: false
@@ -109,4 +117,33 @@ driveThruCarConfig = {
 -- Truck
 goodsTruckConfig = {
     MaxTruckSpeed = false, -- default: 200.0
+}
+
+drinkMachineConfig = {
+    DrinkFillerFillingTime = false, -- default: 5.0
+}
+
+coffeeMachineConfig = {
+    CoffeeFillerFillingTime = false, -- default: 5.0
+    MilkFrothingUpdate = false, -- default: 5.0
+    RemoveCoffeeFromContainer = false, -- default: 5.0
+    CoffeeGrindingUpdate = false, -- default: 0.05
+    CoffeeFillingTime = false, -- default: 5.0
+}
+
+iceCreamMachineConfig = {
+    IceCreamMatFrame = false, -- default: 5.0
+}
+
+fryerBasketConfig = {
+    Doneness = false, -- default: 1.0
+}
+
+gasFryerConfig = {
+    CleanOil = false, -- default: true
+    WasteOil = false, -- default: true
+}
+
+itemTemperatureUpdaterConfig = {
+    UpdateTemperature = false, -- default: true
 }

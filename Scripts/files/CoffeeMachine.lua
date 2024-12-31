@@ -8,33 +8,38 @@ require 'config'
 ---@field CoffeeBeanPercentage double
 ---@field CoffeeGroundPercentage double
 
-
-NotifyOnNewObject('/Game/Blueprints/Gameplay/CoffeeMachine/BP_CoffeeMachine.BP_CoffeeMachine_C', function(coffeeMachine)
-    -- coffeeMachine:SetPropertyValue("CoffeeFillerFillingTime", 1.0)
-    -- coffeeMachine:SetPropertyValue("MilkFlothingTime", 1.0)
-end)
-
 -- RemoveCoffeeFromContainer
-RegisterHook('/Game/Blueprints/Gameplay/CoffeeMachine/BP_CoffeeMachine.BP_CoffeeMachine_C:RemoveCoffeeFromContainer', function(context)
-    local coffeeMachine = context:get()
-    coffeeMachine:SetPropertyValue("CoffeeBeanPercentage", 1.0)
-end)
+if coffeeMachineConfig.RemoveCoffeeFromContainer ~= false then
+    local RemoveCoffeeFromContainer = function(context)
+        local coffeeMachine = context:get()
+        coffeeMachine:SetPropertyValue("CoffeeBeanPercentage", 1.0)
+    end
+    RegisterHook('/Game/Blueprints/Gameplay/CoffeeMachine/BP_CoffeeMachine.BP_CoffeeMachine_C:RemoveCoffeeFromContainer', RemoveCoffeeFromContainer)
+end
 
 -- CoffeeGrindingUpdate
-RegisterHook('/Game/Blueprints/Gameplay/CoffeeMachine/BP_CoffeeMachine.BP_CoffeeMachine_C:CoffeeGrindingUpdate', function(context)
-    local coffeeMachine = context:get()
-    coffeeMachine:SetPropertyValue("CoffeeGroundPercentage", 0.01)
-end)
+if coffeeMachineConfig.CoffeeGrindingUpdate ~= false then
+    local CoffeeGrindingUpdate = function(context)
+        local coffeeMachine = context:get()
+        coffeeMachine:SetPropertyValue("CoffeeGroundPercentage", coffeeMachineConfig.CoffeeGrindingUpdate)
+    end
+    RegisterHook('/Game/Blueprints/Gameplay/CoffeeMachine/BP_CoffeeMachine.BP_CoffeeMachine_C:CoffeeGrindingUpdate', CoffeeGrindingUpdate)
+end
 
 -- CoffeeFillingUpdate
-RegisterHook('/Game/Blueprints/Gameplay/CoffeeMachine/BP_CoffeeMachine.BP_CoffeeMachine_C:CoffeeFillingUpdate', function(context)
-    local coffeeMachine = context:get()
-    coffeeMachine:SetPropertyValue("CoffeeGroundPercentage", 0.01)
-    coffeeMachine:SetPropertyValue("CoffeeFillerFillingTime", 1.0)
-end)
+if coffeeMachineConfig.CoffeeFillingTime ~= false then
+    local CoffeeFillingUpdate = function(context)
+        local coffeeMachine = context:get()
+        coffeeMachine:SetPropertyValue("CoffeeFillerFillingTime", coffeeMachineConfig.CoffeeFillingTime)
+    end
+    RegisterHook('/Game/Blueprints/Gameplay/CoffeeMachine/BP_CoffeeMachine.BP_CoffeeMachine_C:CoffeeFillingUpdate', CoffeeFillingUpdate)
+end
 
 -- MilkFrothingUpdate
-RegisterHook('/Game/Blueprints/Gameplay/CoffeeMachine/BP_CoffeeMachine.BP_CoffeeMachine_C:MilkFrothingUpdate', function(context)
-    local coffeeMachine = context:get()
-    coffeeMachine:SetPropertyValue("MilkFlothingTime", 1.0)
-end)
+if coffeeMachineConfig.MilkFrothingUpdate ~= false then
+    local MilkFrothingUpdate = function(context)
+        local coffeeMachine = context:get()
+        coffeeMachine:SetPropertyValue("MilkFlothingTime", coffeeMachineConfig.MilkFrothingUpdate)
+    end
+    RegisterHook('/Game/Blueprints/Gameplay/CoffeeMachine/BP_CoffeeMachine.BP_CoffeeMachine_C:MilkFrothingUpdate', MilkFrothingUpdate)
+end

@@ -12,11 +12,11 @@ require 'config'
 ---@field LeavingReason ECustomerLeavingReason::Type
 
 -- Update speed
-if CustomerConfig.MaxWalkSpeed ~= false then
+if customerConfig.MaxWalkSpeed ~= false then
     local function OnSpawn(customer)
         local CharacterMovement = customer:GetPropertyValue("CharacterMovement")
         if CharacterMovement then
-            CharacterMovement:SetPropertyValue("MaxWalkSpeed", CustomerConfig.MaxWalkSpeed)
+            CharacterMovement:SetPropertyValue("MaxWalkSpeed", customerConfig.MaxWalkSpeed)
         end
     end
     NotifyOnNewObject('/Game/Blueprints/Characters/Customer/BP_Customer.BP_Customer_C', OnSpawn)
@@ -24,16 +24,16 @@ end
 
 -- GetPatienceSpeed
 ---@param PatienceSpeed double
-if CustomerConfig.PatienceSpeed ~= false then
+if customerConfig.PatienceSpeed ~= false then
     local function GetPatienceSpeed()
-        return CustomerConfig.PatienceSpeed
+        return customerConfig.PatienceSpeed
     end
     RegisterHook('/Game/Blueprints/Characters/Customer/BP_Customer.BP_Customer_C:GetPatienceSpeed', GetPatienceSpeed)
 end
 
 -- HasRunOutOfPatience
 ---@return boolean
-if CustomerConfig.DisableRunOutOfPatience == true then
+if customerConfig.DisableRunOutOfPatience == true then
     local function HasRunOutOfPatience(context)
         return false
     end

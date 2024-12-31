@@ -2,16 +2,17 @@ require 'config'
 
 -- Class variables
 
--- 
-local function UpdateTemperatures(context)
-    local ItemTemperatureUpdater = context:get()
-    local item = ItemTemperatureUpdater:GetFullName()
+if itemsConfig.freezeTemperature == true then
+    local function UpdateTemperatures(context)
+        local ItemTemperatureUpdater = context:get()
+        local item = ItemTemperatureUpdater:GetFullName()
 
-    local UpdatePerTick = ItemTemperatureUpdater:GetPropertyValue("UpdatePerTick")
-    if UpdatePerTick == nil or UpdatePerTick == 0 then
-        return
+        local UpdatePerTick = ItemTemperatureUpdater:GetPropertyValue("UpdatePerTick")
+        if UpdatePerTick == nil or UpdatePerTick == 0 then
+            return
+        end
+
+        ItemTemperatureUpdater:SetPropertyValue("UpdatePerTick", 0)
     end
-
-    ItemTemperatureUpdater:SetPropertyValue("UpdatePerTick", 0)
+    RegisterHook('/Game/Blueprints/Gameplay/Item/BP_ItemTemperatureUpdater.BP_ItemTemperatureUpdater_C:UpdateTemperatures', UpdateTemperatures)
 end
-RegisterHook('/Game/Blueprints/Gameplay/Item/BP_ItemTemperatureUpdater.BP_ItemTemperatureUpdater_C:UpdateTemperatures', UpdateTemperatures)
