@@ -3,7 +3,7 @@ require 'config'
 -- Class variables
 
 if iaHelperConfig.MaxWalkSpeed ~= false then
-    local function OnSpawn(context)
+    local function OnSpawn(player)
         local CharacterMovement = player:GetPropertyValue("CharacterMovement")
         if CharacterMovement then
             CharacterMovement:SetPropertyValue("MaxWalkSpeed", iaHelperConfig.MaxWalkSpeed)

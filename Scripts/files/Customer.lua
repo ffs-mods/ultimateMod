@@ -13,7 +13,7 @@ require 'config'
 
 -- Update speed
 if CustomerConfig.MaxWalkSpeed ~= false then
-    local function OnSpawn(context)
+    local function OnSpawn(customer)
         local CharacterMovement = customer:GetPropertyValue("CharacterMovement")
         if CharacterMovement then
             CharacterMovement:SetPropertyValue("MaxWalkSpeed", CustomerConfig.MaxWalkSpeed)
