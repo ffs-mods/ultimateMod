@@ -1,7 +1,14 @@
 local config = require 'configs'
 
 -- Default config
-local itemsStackConfig = {}
+local itemsStackConfig = {
+    BP_CrateStack_C = {},
+    BP_BurgerIngredientPan_C = {},
+    BP_PattyBox_C = {},
+    BP_BurgerPattyPan_C = {},
+    BP_PattyBox_C = {},
+    BP_FryerBasket_C = {},
+}
 
 -- Return default config if config.items is nil
 if config.items == nil then
@@ -43,7 +50,7 @@ if itemsConfig.InfiniteBeefPatty == true then
     itemsStackConfig.BP_BurgerPattyPan_C.BP_BeefPatty_C = 12 -- default: 12
 end
 if itemsConfig.InfiniteChickenPattyPacket == true then
-    itemsConfig.BP_PattyBox_C.BP_ChickenPattyPacket_C = 2 -- default: 2
+    itemsStackConfig.BP_PattyBox_C.BP_ChickenPattyPacket_C = 2 -- default: 2
 end
 if itemsConfig.InfiniteBeefPattyPacket == true then
     itemsStackConfig.BP_PattyBox_C.BP_BeefPattyPacket_C = 2 -- default: 2
@@ -101,40 +108,40 @@ end
 
 -- Icecream
 if itemsConfig.InfiniteIcecreamCupBox == true then
-    itemsConfig.BP_IcecreamCupBox_C = 2 -- default: 2
+    itemsStackConfig.BP_IcecreamCupBox_C = 2 -- default: 2
 end
 if itemsConfig.InfiniteIceCreamCupStack == true then
-    itemsConfig.BP_IceCreamCupStack_C = 60 -- default: 60
+    itemsStackConfig.BP_IceCreamCupStack_C = 60 -- default: 60
 end
 
 -- Drink
 if itemsConfig.InfiniteDrinkCupBox == true then
-    itemsConfig.BP_DrinkCupBox_C = 2 -- default: 2
+    itemsStackConfig.BP_DrinkCupBox_C = 2 -- default: 2
 end
 if itemsConfig.InfiniteDrinkCupStack == true then
-    itemsConfig.BP_DrinkCupStack_C = 40 -- default: 40
+    itemsStackConfig.BP_DrinkCupStack_C = 40 -- default: 40
 end
 
 -- Nugget
 if itemsConfig.InfiniteFriesNuggetsBox == true then
-    itemsConfig.BP_FriesNuggetsBox_C = 4 -- default: 4
+    itemsStackConfig.BP_FriesNuggetsBox_C = 4 -- default: 4
 end
 if itemsConfig.InfiniteNuggetBoxBox == true then
-    itemsConfig.BP_NuggetBoxBox_C = 2 -- default: 2
+    itemsStackConfig.BP_NuggetBoxBox_C = 2 -- default: 2
 end
 if itemsConfig.InfiniteNuggetBoxStack == true then
-    itemsConfig.BP_NuggetBoxStack_C = 20 -- default: 20
+    itemsStackConfig.BP_NuggetBoxStack_C = 20 -- default: 20
 end
 if itemsConfig.InfiniteNugget == true then
-    itemsConfig.BP_FryerBasket_C.BP_Nugget_C = 120 -- default: 120
+    itemsStackConfig.BP_FryerBasket_C.BP_Nugget_C = 20 -- default: 40
 end
 
 -- PaperBag
 if itemsConfig.InfinitePaperBagBox == true then
-    itemsConfig.BP_PaperBagBox_C = 2 -- default: 2
+    itemsStackConfig.BP_PaperBagBox_C = 2 -- default: 2
 end
 if itemsConfig.InfiniteDriveThruPaperBagStack == true then
-    itemsConfig.BP_DriveThruPaperBagStack_C = 10 -- default: 10
+    itemsStackConfig.BP_DriveThruPaperBagStack_C = 10 -- default: 10
 end
 
 return itemsStackConfig
