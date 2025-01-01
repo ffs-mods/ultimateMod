@@ -7,6 +7,7 @@ local function StartMod(context)
 
     -- -- Gamemode
     require 'files/BakeryGameState_Ingame'
+    require 'files/CustomerManager'
 
     -- -- Extra Ingredients
     require 'files/SauceBottle'

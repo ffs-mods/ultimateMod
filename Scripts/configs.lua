@@ -9,134 +9,136 @@ return {
     -- Items stack config
     items = {
         -- Agredients stack
-        InfiniteCrateStackOnion = false, -- 
-        InfiniteCrateStackIcebergLettuce = false, -- 
-        InfiniteCrateStackTomato = false, --
-        InfinitePickleStack = false, -- 
+        InfiniteCrateStackOnion = true, -- 
+        InfiniteCrateStackIcebergLettuce = true, -- 
+        InfiniteCrateStackTomato = true, --
+        InfinitePickleStack = true, -- 
 
         -- Agredients slice
-        InfinitePickleSlice = false, --
-        InfiniteOnionSlice = false, --
-        InfiniteLettuceLeaf = false, --
-        InfiniteTomatoSlice = false, --
+        InfinitePickleSlice = true, --
+        InfiniteOnionSlice = true, --
+        InfiniteLettuceLeaf = true, --
+        InfiniteTomatoSlice = true, --
 
         -- Agredients for burger        
-        InfiniteBeefPatty = false, --
-        InfiniteBeefPattyPacket = false, --        
-        InfiniteCheeseBox = false, --
-        InfiniteChickenPattyPacket = false, --
+        InfiniteBeefPatty = true, --
+        InfiniteBeefPattyPacket = true, --        
+        InfiniteCheeseBox = true, --
+        InfiniteChickenPattyPacket = true, --
 
         -- Burger
-        InfiniteBurgerBunPacketStack = false, --
-        InfiniteBurgerBunPacket = false, --
+        InfiniteBurgerBunPacketStack = true, --
+        InfiniteBurgerBunPacket = true, --
 
         -- Burger Wrapper
-        InfiniteWrapperStackBox = false, --
-        InfiniteBurgerWrappingPaperStack = false, --
+        InfiniteWrapperStackBox = true, --
+        InfiniteBurgerWrappingPaperStack = true, --
 
         -- Fry
-        InfiniteFriesScoopBox = false, --
-        InfiniteFriesScoopStackSmall = false, --
-        InfiniteFriesScoopStackMedium = false, --
-        InfiniteFriesScoopStackLarge = false, --
-        InfiniteFry = false, --
+        InfiniteFriesScoopBox = true, --
+        InfiniteFriesScoopStackSmall = true, --
+        InfiniteFriesScoopStackMedium = true, --
+        InfiniteFriesScoopStackLarge = true, --
+        InfiniteFry = true, --
 
         -- Coffee 
-        InfiniteCoffeeCupBox = false, --
-        InfiniteCoffeeCupStack = false, --
-        InfiniteCoffeeBox = false, --
-        InfiniteMilkBox = false, --
+        InfiniteCoffeeCupBox = true, --
+        InfiniteCoffeeCupStack = true, --
+        InfiniteCoffeeBox = true, --
+        InfiniteMilkBox = true, --
 
         -- Icecream
-        InfiniteIcecreamCupBox = false, --
-        InfiniteIceCreamCupStack = false, --
+        InfiniteIcecreamCupBox = true, --
+        InfiniteIceCreamCupStack = true, --
 
         -- Drink
-        InfiniteDrinkCupBox = false, --
-        InfiniteDrinkCupStack = false, --
+        InfiniteDrinkCupBox = true, --
+        InfiniteDrinkCupStack = true, --
 
         -- Nugget
-        InfiniteFriesNuggetsBox = false, --
-        InfiniteNuggetBoxBox = false, --
-        InfiniteNuggetBoxStack = false, --
-        InfiniteNugget = false, --
+        InfiniteFriesNuggetsBox = true, --
+        InfiniteNuggetBoxBox = true, --
+        InfiniteNuggetBoxStack = true, --
+        InfiniteNugget = true, --
 
         -- PaperBag
-        InfinitePaperBagBox = false, --
-        InfiniteDriveThruPaperBagStack = false, --
+        InfinitePaperBagBox = true, --
+        InfiniteDriveThruPaperBagStack = true, --
     },
 
     -- SauceBottle config
     sauceBottle = {
-        InfiniteSauce = false, -- 
+        InfiniteSauce = true, -- 
     },
 
     oilCan = {
-        InfiniteOil = false, -- 
+        InfiniteOil = true, -- 
     },
 
     wasteOilBarelLittle = {
-        AutoEmptying = false, --
+        AutoEmptying = true, --
     },
 
     -- Customer config
     customer = {
-        InfinitePatienceForTable = false, --
-        FastWalkSpeed = false, --
-        FastEating = false, --
-        InfinitePatienceForDriveThru = false, --
-        FastCarSpeed = false, --
+        InfinitePatienceForTable = true, --
+        FastSpawningForTable = true, --
+        FastWalkSpeed = true, --
+        FastEating = true, --
+        InfinitePatienceForDriveThru = true, --
+        FastSpawningDriveThru = true, --
+        FastCarSpeed = true, --
     },
 
     iaEmployee = {
-        BusserFastWalkSpeed = false, --
-        ServerFastWalkSpeed = false, --
+        BusserFastWalkSpeed = true, --
+        ServerFastWalkSpeed = true, --
     },
 
     -- Truck config
     goodsTruck = {
-        FastTruckSpeed = false, --
+        FastTruckSpeed = true, --
     },
 
     -- DrinkMachine config
     drinkMachine = {
-        FastDrinkFillerFilling = false, --
-        DisabledTemperature = false, --
+        FastDrinkFillerFilling = true, --
+        DisabledTemperature = true, --
     },
 
     -- CoffeeMachine config
     coffeeMachine = {
-        InfiniteCoffeeFromContainer = false, --
-        InfiniteGrindingCoffeeFromContainer = false, --
-        FastMilkFrothing = false, --
-        FastCoffeeGrinding = false, --
-        FastCoffeeFilling = false, --
-        DisabledTemperature = false, --
+        InfiniteCoffeeFromContainer = true, --
+        InfiniteGrindingCoffeeFromContainer = true, --
+        FastMilkFrothing = true, --
+        FastCoffeeGrinding = true, --
+        FastCoffeeFilling = true, --
+        DisabledTemperature = true, --
     },
 
     -- IceCreamMachine config
     iceCreamMachine = {
-        FastIceCreamFilling = false, --
-        DisabledTemperature = false, --
+        FastIceCreamFilling = true, --
+        DisabledTemperature = true, --
     },
 
     -- Fryer config
     fryer = {
-        FastFryerFilling = false, --
-        FastFryerCooking = false, --
-        FastFryerEmptying = false, --
+        FastFryerFilling = true, --
+        FastFryerCooking = true, --
+        FastFryerEmptying = true, --
     },
 
     -- GasFryer config
     gasFryer = {
-        LimiteDoneness = false, --
-        OilContaminationPrevention = false, --
-        OilConsumptionPrevention = false, --
+        LimiteDoneness = true, --
+        OilContaminationPrevention = true, --
+        OilConsumptionPrevention = true, --
     },
 
     -- BeefPatty (grill) config
     beefPatty = {
-        LimiteDoneness = false, --
+        LimiteDoneness = true, --
     },
 
 }
