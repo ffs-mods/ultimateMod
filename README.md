@@ -19,8 +19,8 @@
 - ♻️ Auto-emptying waste oil barrels.
 
 **Customers**
-- 🙋 **Dine-In**: Infinite patience, fast walking, fast eating.
-- 🚗 **Drive-Thru**: Infinite patience and fast car speeds.
+- 🙋 **Dine-In**: Infinite patience, fast walking, fast eating and fast spawning.
+- 🚗 **Drive-Thru**: Infinite patience, fast car speeds and fast spawning.
 
 **Employees**
 - 🏃 Fast walking for bussers and servers.
