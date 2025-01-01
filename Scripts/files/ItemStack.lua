@@ -1,4 +1,5 @@
-require 'config'
+local itemsStackConfig = require 'configs/itemsStack'
+local configs = require 'configs'
 
 -- Class variables
 
@@ -21,20 +22,17 @@ local function getMaxItem(ItemStackTargetName, ItemStackClassName)
     end
 end
 
-if itemsConfig.infiniteStack == true then
-    local function OnItemStackCountChanged(context)
-        local ItemStackTarget = context:get()
-        local ItemStackTargetCount = ItemStackTarget:GetPropertyValue("ItemStackCount")
-        local ItemStackTargetName = ItemStackTarget:GetFullName()
-        
-        local ItemStackClass = ItemStackTarget:GetPropertyValue('ItemStackClass')
-        local ItemStackClassName = ItemStackClass:GetFullName()
-
-        local maxItem, isItem = getMaxItem(ItemStackTargetName, ItemStackClassName)
-        if maxItem == nil then
-            return
-        end
-        ItemStackTarget:SetPropertyValue("ItemStackCount", maxItem)
+local function OnItemStackCountChanged(context)
+    local ItemStackTarget = context:get()
+    local ItemStackTargetCount = ItemStackTarget:GetPropertyValue("ItemStackCount")
+    local ItemStackTargetName = ItemStackTarget:GetFullName()
+    
+    local ItemStackClass = ItemStackTarget:GetPropertyValue('ItemStackClass')
+    local ItemStackClassName = ItemStackClass:GetFullName()
+    local maxItem, isItem = getMaxItem(ItemStackTargetName, ItemStackClassName)
+    if maxItem == nil then
+        return
     end
-    RegisterHook('/Game/Blueprints/Gameplay/Item/BP_ItemStack.BP_ItemStack_C:OnItemStackCountChanged', OnItemStackCountChanged)
+    ItemStackTarget:SetPropertyValue("ItemStackCount", maxItem)
 end
+RegisterHook('/Game/Blueprints/Gameplay/Item/BP_ItemStack.BP_ItemStack_C:OnItemStackCountChanged', OnItemStackCountChanged)

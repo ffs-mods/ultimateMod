@@ -1,23 +1,24 @@
-require 'config'
+local configs = require 'configs'
 
 -- Class variables
 
---
-local function OnRep_MeatTopDoneness(context)
-    local patty = context:get()
-    local currentTopDoneness = patty:GetPropertyValue("MeatTopDoneness")    
-    if currentTopDoneness >= 0.5 then
-        patty:SetPropertyValue("MeatTopDoneness", 0.5)
+if configs.beefPatty.LimiteDoneness == true then
+    local function OnRep_MeatTopDoneness(context)
+        local patty = context:get()
+        local currentTopDoneness = patty:GetPropertyValue("MeatTopDoneness")    
+        if currentTopDoneness >= 0.5 then
+            patty:SetPropertyValue("MeatTopDoneness", 0.5)
+        end
     end
-end
-RegisterHook('/Game/Blueprints/Gameplay/FastFood/Burger/BP_BeefPatty.BP_BeefPatty_C:OnRep_MeatTopDoneness', OnRep_MeatTopDoneness)
+    RegisterHook('/Game/Blueprints/Gameplay/FastFood/Burger/BP_BeefPatty.BP_BeefPatty_C:OnRep_MeatTopDoneness', OnRep_MeatTopDoneness)
 
---
-local function OnRep_MeatBottomDoneness(context)
-    local patty = context:get()
-    local currentBottomDoneness = patty:GetPropertyValue("MeatBottomDoneness")
-    if currentBottomDoneness >= 0.5 then
-        patty:SetPropertyValue("MeatBottomDoneness", 0.5)
+    --
+    local function OnRep_MeatBottomDoneness(context)
+        local patty = context:get()
+        local currentBottomDoneness = patty:GetPropertyValue("MeatBottomDoneness")
+        if currentBottomDoneness >= 0.5 then
+            patty:SetPropertyValue("MeatBottomDoneness", 0.5)
+        end
     end
+    RegisterHook('/Game/Blueprints/Gameplay/FastFood/Burger/BP_BeefPatty.BP_BeefPatty_C:OnRep_MeatBottomDoneness', OnRep_MeatBottomDoneness)
 end
-RegisterHook('/Game/Blueprints/Gameplay/FastFood/Burger/BP_BeefPatty.BP_BeefPatty_C:OnRep_MeatBottomDoneness', OnRep_MeatBottomDoneness)

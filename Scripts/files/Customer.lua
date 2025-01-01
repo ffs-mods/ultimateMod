@@ -1,4 +1,6 @@
-require 'config'
+local configs = require 'configs'
+
+local WalkSpeed = 400.0
 
 -- Class variables
 ---@field CustomerTable ABP_Customer_TableBase_C
@@ -12,28 +14,19 @@ require 'config'
 ---@field LeavingReason ECustomerLeavingReason::Type
 
 -- Update speed
-if customerConfig.MaxWalkSpeed ~= false then
+if configs.customer.FastWalkSpeed == true then
     local function OnSpawn(customer)
         local CharacterMovement = customer:GetPropertyValue("CharacterMovement")
         if CharacterMovement then
-            CharacterMovement:SetPropertyValue("MaxWalkSpeed", customerConfig.MaxWalkSpeed)
+            CharacterMovement:SetPropertyValue("MaxWalkSpeed", WalkSpeed)
         end
     end
     NotifyOnNewObject('/Game/Blueprints/Characters/Customer/BP_Customer.BP_Customer_C', OnSpawn)
 end
 
--- GetPatienceSpeed
----@param PatienceSpeed double
-if customerConfig.PatienceSpeed ~= false then
-    local function GetPatienceSpeed()
-        return customerConfig.PatienceSpeed
-    end
-    RegisterHook('/Game/Blueprints/Characters/Customer/BP_Customer.BP_Customer_C:GetPatienceSpeed', GetPatienceSpeed)
-end
-
 -- HasRunOutOfPatience
 ---@return boolean
-if customerConfig.DisableRunOutOfPatience == true then
+if configs.customer.InfinitePatienceForTable == true then
     local function HasRunOutOfPatience(context)
         return false
     end

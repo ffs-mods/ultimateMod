@@ -1,13 +1,14 @@
-require 'config'
+local configs = require 'configs'
+
+local MaxWalkSpeed = 600.0
 
 -- Class variables
 ---@field MaxTruckSpeed double
 ---@field TruckSpeed double
 
-if goodsTruckConfig.MaxTruckSpeed ~= false then
+if configs.goodsTruck.FastTruckSpeed == true then
     local function OnSpawn(truck)
-        print("Truck spawned")
-        truck:SetPropertyValue("MaxTruckSpeed", goodsTruckConfig.MaxTruckSpeed)
+        truck:SetPropertyValue("MaxTruckSpeed", MaxWalkSpeed)
     end
     NotifyOnNewObject('/Game/Blueprints/Gameplay/Car/BP_GoodsTruck.BP_GoodsTruck_C', OnSpawn)
 end

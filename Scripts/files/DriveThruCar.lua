@@ -1,4 +1,6 @@
-require 'config'
+local configs = require 'configs'
+
+local MaxCarSpeed = 400.0
 
 -- Class variables
 ---@field MaxCarSpeed double
@@ -8,7 +10,7 @@ require 'config'
 
 -- HasRunOutOfPatience
 ---@return boolean
-if driveThruCarConfig.DisableRunOutOfPatience == true then
+if configs.customer.InfinitePatienceForDriveThru == true then
     local function HasRunOutOfPatience(context)
         return false
     end
@@ -16,9 +18,9 @@ if driveThruCarConfig.DisableRunOutOfPatience == true then
 end
 
 
-if driveThruCarConfig.MaxCarSpeed ~= false then
+if configs.customer.FastCarSpeed == true then
     local function GetMaxCarSpeed()
-        return driveThruCarConfig.MaxCarSpeed
+        return MaxCarSpeed
     end
     RegisterHook('/Game/Blueprints/Gameplay/DriveThru/BP_DriveThruCar.BP_DriveThruCar_C:GetMaxCarSpeed', GetMaxCarSpeed)
 end

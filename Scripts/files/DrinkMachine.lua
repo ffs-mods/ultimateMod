@@ -1,15 +1,15 @@
-require 'config'
+local configs = require 'configs'
 
 -- Class variables
 ---@field DrinkFillerFillingTime TArray<double>
 
-if drinkMachineConfig.DrinkFillerFillingTime ~= false then
+if configs.drinkMachine.FastDrinkFilling == true then
     local function OnSpawn(DrinkMachine)
         local DrinkFillerFillingTime = DrinkMachine:GetPropertyValue('DrinkFillerFillingTime')
         DrinkFillerFillingTime:ForEach(function(key, elem)
             local value = elem:get()
             if value > 0 then
-                elem:set(drinkMachineConfig.DrinkFillerFillingTime)
+                elem:set(1.0)
             end
         end)
     end

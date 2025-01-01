@@ -1,13 +1,15 @@
-require 'config'
+local configs = require 'configs'
+
+local maxDoneness = 0.5
 
 -- Class variables
 
-if fryerBasketConfig.Doneness ~= false then
+if configs.gasFryer.LimiteDoneness == true then
     local function OnRep_Doneness(context)
         local fryerBasket = context:get()
         local currentDoneness = fryerBasket:GetPropertyValue("Doneness")
-        if currentDoneness >= fryerBasketConfig.Doneness then
-            fryerBasket:SetPropertyValue("Doneness", fryerBasketConfig.Doneness)
+        if currentDoneness >= maxDoneness then
+            fryerBasket:SetPropertyValue("Doneness", maxDoneness)
         end
     end
     RegisterHook('/Game/Blueprints/Gameplay/FastFood/BP_FryerBasket.BP_FryerBasket_C:OnRep_Doneness', OnRep_Doneness)

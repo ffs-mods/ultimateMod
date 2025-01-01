@@ -1,8 +1,12 @@
-require 'config'
+local configs = require 'configs'
 
 -- Class variables
 
-if itemsConfig.freezeTemperature == true then
+if
+    configs.iceCreamMachine.DisabledTemperature == true
+    or configs.coffeeMachine.DisabledTemperature == true
+    or configs.drinkMachine.DisabledTemperature == true
+then
     local function UpdateTemperatures(context)
         local ItemTemperatureUpdater = context:get()
         local item = ItemTemperatureUpdater:GetFullName()

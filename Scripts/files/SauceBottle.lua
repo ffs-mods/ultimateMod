@@ -1,8 +1,8 @@
-require 'config'
+local configs = require 'configs'
 
 -- Class variables
 
-if itemsConfig.infiniteSauce == true then
+if configs.sauceBottle.InfiniteSauce == true then
     local function GetItemHoldingTransform(context)
         local sauce = context:get()
         sauce:SetPropertyValue("SauceCount", 15)

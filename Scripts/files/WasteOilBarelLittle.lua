@@ -1,8 +1,8 @@
-require 'config'
+local configs = require 'configs'
 
 -- Class variables
 
-if itemsConfig.infiniteWasteOil == true then
+if configs.wasteOilBarelLittle.AutoEmptying == true then
     local function GetItemHoldingTransform(context)
         local wasteOil = context:get()
         wasteOil:SetPropertyValue("WasteOil", 0)
