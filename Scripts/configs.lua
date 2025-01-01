@@ -1,4 +1,10 @@
+local UEHelpers = require("UEHelpers")
+
 return {
+
+    commandesKeys = {
+        FrezeTime = Key.F1,
+    },
 
     -- Items stack config
     items = {
