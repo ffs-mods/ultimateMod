@@ -3,7 +3,7 @@ local configs = require 'configs'
 -- Class variables
 
 
-if configs.gasFryer.OilConsumptionPrevention ~= false then
+if configs.gasFryer.OilConsumptionPrevention == true then
     local function OnRep_CleanOil1(context)
         local fryer = context:get()
         local currentCleanOil1 = fryer:GetPropertyValue("CleanOil1")
@@ -19,7 +19,7 @@ if configs.gasFryer.OilConsumptionPrevention ~= false then
     RegisterHook('/Game/Blueprints/Gameplay/Restaurant/BP_GasFryer.BP_GasFryer_C:OnRep_CleanOil2', OnRep_CleanOil2)
 end
 
-if configs.gasFryer.OilContaminationPrevention ~= false then
+if configs.gasFryer.OilContaminationPrevention == true then
     local function OnRep_WasteOil1(context)
         local fryer = context:get()
         local currentWasteOil1 = fryer:GetPropertyValue("WasteOil1")
