@@ -1,0 +1,93 @@
+{
+    "sauceBottle": {
+        "InfiniteSauce": false
+    },
+    "oilCan": {
+        "InfiniteOil": false
+    },
+    "wasteOilBarelLittle": {
+        "InfiniteOil": false
+    },
+    "customer": {
+        "InfinitePatienceForTable": false,
+        "FastSpawningForTable": false,
+        "FastWalkSpeed": false,
+        "FastEating": false,
+        "InfinitePatienceForDriveThru": false,
+        "FastSpawningDriveThru": false,
+        "FastCarSpeed": false
+    },
+    "iaEmployee": {
+        "BusserFastWalkSpeed": false,
+        "ServerFastWalkSpeed": false
+    },
+    "goodsTruck": {
+        "FastTruckSpeed": false
+    },
+    "drinkMachine": {
+        "FastDrinkFillerFilling": false,
+        "DisabledTemperature": false
+    },
+    "coffeeMachine": {
+        "InfiniteCoffeeFromContainer": false,
+        "InfiniteGrindingCoffeeFromContainer": false,
+        "FastMilkFrothing": false,
+        "FastCoffeeGrinding": false,
+        "FastCoffeeFilling": false,
+        "DisabledTemperature": false
+    },
+    "iceCreamMachine": {
+        "DisabledTemperature": false,
+        "FastIceCreamFilling": false
+    },
+    "fryer": {
+        "FastFryerFilling": false,
+        "FastFryerCooking": false,
+        "FastFryerEmptying": false
+    },
+    "gasFryer": {
+        "LimiteDoneness": false,
+        "OilContaminationPrevention": false,
+        "OilConsumptionPrevention": false
+    },
+    "beefPatty": {
+        "LimiteDoneness": false
+    },
+    "items": {
+        "InfiniteCrateStackOnion": false,
+        "InfiniteCrateStackIcebergLettuce": false,
+        "InfiniteCrateStackTomato": false,
+        "InfinitePickleStack": false,
+        "InfinitePickleSlice": false,
+        "InfiniteOnionSlice": false,
+        "InfiniteLettuceLeaf": false,
+        "InfiniteTomatoSlice": false,
+        "InfiniteBeefPatty": false,
+        "InfiniteBeefPattyPacket": false,
+        "InfiniteCheeseBox": false,
+        "InfiniteChickenPattyPacket": false,
+        "InfiniteBurgerBunPacketStack": false,
+        "InfiniteBurgerBunPacket": false,
+        "InfiniteWrapperStackBox": false,
+        "InfiniteBurgerWrappingPaperStack": false,
+        "InfiniteFriesScoopBox": false,
+        "InfiniteFriesScoopStackSmall": false,
+        "InfiniteFriesScoopStackMedium": false,
+        "InfiniteFriesScoopStackLarge": false,
+        "InfiniteFry": false,
+        "InfiniteCoffeeCupBox": false,
+        "InfiniteCoffeeCupStack": false,
+        "InfiniteCoffeeBox": false,
+        "InfiniteMilkBox": false,
+        "InfiniteIcecreamCupBox": false,
+        "InfiniteIceCreamCupStack": false,
+        "InfiniteDrinkCupBox": false,
+        "InfiniteDrinkCupStack": false,
+        "InfiniteFriesNuggetsBox": false,
+        "InfiniteNuggetBoxBox": false,
+        "InfiniteNuggetBoxStack": false,
+        "InfiniteNugget": false,
+        "InfinitePaperBagBox": false,
+        "InfiniteDriveThruPaperBagStack": false
+    }
+}
